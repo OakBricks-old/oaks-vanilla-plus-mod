@@ -34,9 +34,5 @@ jobs:
         body_path: This is automatically made for a release # optional
         # Gives the release a custom name. Defaults to tag name
         name: Auto-CI Release # optional
-        # Creates a draft release. Defaults to false
-        draft: false # optional
-        # Identify the release as a prerelease. Defaults to false
-        prerelease: true # optional
         # Newline-delimited list of path globs for asset files to upload
         files: bulit/libs/*.jar # optional
