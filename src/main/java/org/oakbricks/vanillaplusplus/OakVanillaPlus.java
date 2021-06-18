@@ -3,7 +3,10 @@ package org.oakbricks.vanillaplusplus;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
@@ -18,10 +21,15 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.heightprovider.UniformHeightProvider;
 import org.oakbricks.vanillaplusplus.block.BlockInit;
+import org.oakbricks.vanillaplusplus.item.ItemInit;
 
 public class OakVanillaPlus implements ModInitializer {
 
 	public static final String MOD_ID = "vanillaplusplus";
+
+	public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.build(
+			new Identifier(MOD_ID, "general"),
+			() -> new ItemStack(ItemInit.TIN_SCRAP));
 
 	//Standard stone ore gen for Tin
 	private static ConfiguredFeature<?, ?> TIN_ORE_OVERWORLD = Feature.ORE
@@ -49,6 +57,8 @@ public class OakVanillaPlus implements ModInitializer {
 		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, tinDeepslateOreOverworld);
 
 		BlockInit.registerBlocks();
+		ItemInit.registerItems();
+		BlockInit.registerBlockItems();
 
 	}
 }
