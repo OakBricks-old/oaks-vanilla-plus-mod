@@ -1,12 +1,12 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.fabricmc.example.mixin",
+  "package": "org.oakbricks.vanillaplusplus.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
   ],
   "client": [
-    "org.oakbricks.vanillaplusplus.mixin.ExampleMixin"
+    "ExampleMixin"
   ],
   "injectors": {
     "defaultRequire": 1
