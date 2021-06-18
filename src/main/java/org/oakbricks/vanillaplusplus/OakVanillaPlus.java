@@ -25,7 +25,7 @@ import org.oakbricks.vanillaplusplus.item.ItemInit;
 
 public class OakVanillaPlus implements ModInitializer {
 
-	public static final String MOD_ID = "vanillaplusplus";
+	public static final String MOD_ID = "vplusplus";
 
 	public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.build(
 			new Identifier(MOD_ID, "general"),
